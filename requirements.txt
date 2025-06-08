@@ -1,0 +1,9 @@
+with open("requirements.txt", "w") as f:
+    f.write("""pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+joblib
+""")
+print("✅ 已建立 requirements.txt")
