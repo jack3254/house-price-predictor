@@ -17,3 +17,4 @@
 ```bash
 pip install -r requirements.txt
 jupyter notebook notebook/house_price_model.ipynb
+
