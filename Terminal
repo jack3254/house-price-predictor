@@ -1,0 +1,15 @@
+# Step 1: 解壓縮 ZIP 專案
+unzip house-price-predictor.zip
+cd house-price-predictor
+
+# Step 2: 初始化 Git
+git init
+git branch -m main
+git add .
+git commit -m "Initial commit - House Price Prediction System"
+
+# Step 3: 連接到 GitHub 倉庫
+git remote add origin https://github.com/jack3254/house-price-predictor.git
+
+# Step 4: 上傳
+git push -u origin main
