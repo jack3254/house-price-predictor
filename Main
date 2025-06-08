@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # 1. 載入資料
 df = pd.read_csv("data/train.csv")
-
+https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data
 # 2. 選擇特徵
 features = ['OverallQual', 'GrLivArea', 'GarageCars', 'TotalBsmtSF']
 X = df[features]
