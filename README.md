@@ -1,43 +1,19 @@
-# 🏡 房價預測模型建構
+# 🏡 房價預測系統（House Price Predictor）
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+[![Python](https://img.shields.io/badge/Python-3.8+-blue)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Model](https://img.shields.io/badge/Model-LinearRegression%20%7C%20XGBoost-orange)]()
 
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, r2_score
+本專案使用 Python 與機器學習模型，預測房屋銷售價格。使用 Kaggle 的房價資料集（House Prices - Advanced Regression Techniques）。
 
-import joblib
+## 🔧 功能
+- 使用 Linear Regression、Random Forest、XGBoost 建立模型
+- 特徵工程：處理缺失值與類別資料
+- 預測模型儲存 (`joblib`)
+- 可視化殘差圖與預測效果
+- 評估指標：RMSE、R²
 
-# 讀取資料
-df = pd.read_csv("data/train.csv")
-df = df[['OverallQual', 'GrLivArea', 'GarageCars', 'TotalBsmtSF', 'FullBath', 'YearBuilt', 'SalePrice']]
-df.dropna(inplace=True)
-
-# 拆分特徵與標籤
-X = df.drop('SalePrice', axis=1)
-y = df['SalePrice']
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# 模型訓練
-model = LinearRegression()
-model.fit(X_train, y_train)
-y_pred = model.predict(X_test)
-
-# 評估
-rmse = mean_squared_error(y_test, y_pred, squared=False)
-r2 = r2_score(y_test, y_pred)
-print(f"RMSE: {rmse:.2f}")
-print(f"R²: {r2:.2f}")
-
-# 可視化
-plt.scatter(y_test, y_pred)
-plt.xlabel("Actual Price")
-plt.ylabel("Predicted Price")
-plt.title("Actual vs Predicted")
-plt.show()
-
-# 儲存模型
-joblib.dump(model, "models/house_price_model.pkl")
+## 🚀 執行方式
+```bash
+pip install -r requirements.txt
+jupyter notebook notebook/house_price_model.ipynb
