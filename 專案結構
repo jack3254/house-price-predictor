@@ -1,0 +1,9 @@
+house-price-predictor/
+├── data/
+│   └── train.csv               # 原始訓練資料
+├── notebook/
+│   └── house_price_model.ipynb # 主 Jupyter 筆記本
+├── models/
+│   └── house_price_model.pkl   # 儲存模型
+├── requirements.txt            # 套件需求
+└── README.md                   # 專案說明文件
